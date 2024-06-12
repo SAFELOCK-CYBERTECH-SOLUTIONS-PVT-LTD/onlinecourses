@@ -1,237 +1,314 @@
-<span style="font-family: verdana, geneva, sans-serif;">
-    <!DOCTYPE html>
-    <html lang="en">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Online Courses</title>
+    <link rel="stylesheet" href="style1.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
 
-    <head>
-        <title>Developers | Admin Dashboard</title>
-        <link rel="stylesheet" href="style1.css" />
-        <!-- Font Awesome Cdn Link -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+        body {
+            background: rgb(216, 208, 208);
+        }
 
-            * {
-                margin: 0;
-                padding: 0;
-                outline: none;
-                border: none;
-                text-decoration: none;
-                list-style: none;
-                box-sizing: border-box;
-                font-family: "Poppins", sans-serif;
-            }
+        .container {
+            display: flex;
+            width: 1200px;
+            margin: auto;
+        }
 
-            body {
-                background: rgb(187, 182, 182);
-            }
+        nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 350px;
+            height: 120vh;
+            background: #fff;
+        }
 
-            .container {
-                display: flex;
-                width: 1200px;
-                margin: auto;
-            }
+        .navbar {
+            width: 180%;
+            margin: 0 auto;
+        }
 
-            nav {
-                position: sticky;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                width: 330px;
-                height: 120vh;
-                background: #fff;
-            }
+        .logo {
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
 
-            .navbar {
-                width: 80%;
-                margin: 0 auto;
-            }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
 
-            .logo {
-                margin: 2rem 0 1rem 0;
-                padding-bottom: 3rem;
-                display: flex;
-                align-items: center;
-            }
+        .logo h1 {
+            margin-left: 1rem;
+            text-transform: uppercase;
+        }
 
-            .logo img {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-            }
+        ul {
+            margin: 0 auto;
+        }
 
-            .logo h1 {
-                margin-left: 1rem;
-                text-transform: uppercase;
-            }
+        li {
+            padding-bottom: 2rem;
+        }
 
-            ul {
-                margin: 0 auto;
-            }
+        li a {
+            font-size: 16px;
+            color: rgb(85, 83, 83);
+        }
 
-            li {
-                padding-bottom: 2rem;
-            }
+        nav i {
+            width: 50px;
+            font-size: 18px;
+            text-align: center;
+        }
 
-            li a {
-                font-size: 16px;
-                color: rgb(85, 83, 83);
-            }
+        .logout {
+            position: absolute;
+            margin-bottom: 60px;
+        }
 
-            nav i {
-                width: 50px;
-                font-size: 18px;
-                text-align: center;
-            }
+        /* Main Section */
+        .main {
+            width: 90%;
+        }
 
-            .logout {
-                position: absolute;
-                bottom: 60px;
-            }
+        .main-top {
+            width: 110%;
+            background: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgb(43, 43, 43);
+        }
 
-            /* Main Section */
-            .main {
-                width: 100%;
-            }
+        .main-body {
+            padding: 10px 10px 10px 20px;
+        }
 
-            .main-top {
-                width: 100%;
-                background: #fff;
-                padding: 10px;
-                text-align: center;
-                font-size: 18px;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: rgb(43, 43, 43);
-            }
+        h1 {
+            margin: 20px 10px;
+        }
 
-            .main-body {
-                padding: 10px 10px 10px 20px;
-            }
+        .search_bar {
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+        }
 
-            h1 {
-                margin: 20px 10px;
-            }
+        .search_bar input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid rgb(190, 190, 190);
+        }
 
-            .search_bar {
-                display: flex;
-                padding: 10px;
-                justify-content: space-between;
-            }
+        .search_bar input:focus {
+            border: 1px solid blueviolet;
+        }
 
-            .search_bar input {
-                width: 50%;
-                padding: 10px;
-                border: 1px solid rgb(190, 190, 190);
-            }
+        .search_bar select {
+            border: 1px solid rgb(190, 190, 190);
+            padding: 10px;
+            margin-left: 2rem;
+        }
 
-            .search_bar input:focus {
-                border: 1px solid blueviolet;
-            }
+        .search_bar .filter {
+            width: 300px;
+        }
 
-            .search_bar select {
-                border: 1px solid rgb(238, 232, 232);
-                padding: 10px;
-                margin-left: 2rem;
-            }
+        .tags_bar {
+            width: 55%;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+        }
 
-            .search_bar .filter {
-                width: 300px;
-            }
+        .tag {
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            cursor: pointer;
+        }
 
-            .tags_bar {
-                width: 55%;
-                display: flex;
-                padding: 10px;
-                justify-content: space-between;
-            }
+        .tag i {
+            margin-right: 0.7rem;
+        }
 
-            .tag {
-                background: #fff;
-                padding: 10px 15px;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                font-size: 13px;
-                cursor: pointer;
-            }
+        .row {
+            display: flex;
+            padding: 10px;
+            position: relative;
+            margin-top: 1.3rem;
+            justify-content: space-between;
+        }
 
-            .tag i {
-                margin-right: 0.7rem;
-            }
+        .row p {
+            color: rgb(54, 54, 54);
+            font-size: 15px;
+        }
 
-            .row {
-                display: flex;
-                padding: 10px;
-                margin-top: 1.3rem;
-                justify-content: space-between;
-            }
+        .row p span {
+            color: blueviolet;
+        }
 
-            .row p {
-                color: rgb(54, 54, 54);
-                font-size: 15px;
-            }
+        .job_card {
+            width: 100%;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            border-radius: 10px;
+            background: #fff;
+            margin-bottom: 15px;
+            justify-content: space-between;
+            border: 2px solid rgb(190, 190, 190);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
 
-            .row p span {
-                color: blueviolet;
-            }
+        .job_details {
+            display: flex;
+        }
 
-            .job_card {
-                width: 100%;
-                padding: 15px;
-                cursor: pointer;
-                display: flex;
-                border-radius: 10px;
-                background: #fff;
-                margin-bottom: 15px;
-                justify-content: space-between;
-                border: 2px solid rgb(240, 235, 235);
-                box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-            }
+        .job_details .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-            .job_details {
-                display: flex;
-            }
+        .job_details .img i {
+            width: 70px;
+            font-size: 3rem;
+            margin-left: 1rem;
+            padding: 10px;
+            color: rgb(82, 22, 138);
+            background: rgb(216, 205, 226);
+        }
 
-            .job_details .img {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+        .job_details .text {
+            margin-left: 2.3rem;
+        }
 
-            .job_details .img i {
-                width: 70px;
-                font-size: 3rem;
-                margin-left: 1rem;
-                padding: 10px;
-                color: rgb(82, 22, 138);
-                background: rgb(243, 242, 245);
-            }
+        .job_details .text span {
+            color: rgb(116, 112, 112);
+        }
 
-            .job_details .text {
-                margin-left: 2.3rem;
-            }
+        .job_salary {
+            text-align: right;
+            color: rgb(54, 54, 54);
+        }
 
-            .job_details .text span {
-                color: rgb(243, 238, 238);
-            }
+        .job_card:active {
+            border: 2px solid blueviolet;
+            transition: 0.4s;
+        }
 
-            .job_salary {
-                text-align: right;
-                color: rgb(245, 241, 241);
-            }
+        .Admin_profile {
+            margin-left: 20%;
+            height: 50px;
+            width: 50px;
+        }
 
-            .job_card:active {
-                border: 2px solid blueviolet;
-                transition: 0.4s;
-            }
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-            .Admin_profile {
-                margin-left: 20%;
-                height: 50px;
-                width: 50px;
-            }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-            table {
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #5d7bbb;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 48%;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #9fe7a3;
+        }
+        .title-and-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Admin_profile_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #d0d3d0; /* Change the background color as needed */
+    color: white;
+    font-size: 24px;
+}
+
+.main-top {
+    position: relative;
+}
+
+h3 {
+    text-align: center;
+    margin: 0;
+    flex: 1; /* Allows the admin name to take up remaining space */
+}
+table {
                 font-family: arial, sans-serif;
                 border-collapse: collapse;
                 width: 100%;
@@ -239,236 +316,134 @@
 
             td,
             th {
-                border: 1px solid #f7f2f2;
+                border: 1px solid #dddddd;
                 text-align: left;
                 padding: 8px;
             }
 
             tr:nth-child(even) {
-                background-color: #f3f0f0;
+                background-color: #dddddd;
             }
-        </style>
-
-
-    </head>
-
-    <body>
-        <div class="container">
-            <nav>
-                <div class="navbar">
-                    <div class="logo">
-                        <a href="index.html"><img src="./assets/img/logo1.png" alt="Chromoweb" href="index.html">
-                            <h1>Chromoweb
-                        </a></h1>
-                    </div>
-                    <div class="Admin_profile"><b><i class="fas fa-user"></i></b><br>
-                        <a href="admin_profile.html"><span class="nav-item"><b>Admin_profile</b></span>
-                        </a>
-                    </div><br><br>
-                    <ul>
-                        <li><a href="servicesdata.html">
-                                <i class="fas fa-chart-bar"></i>
-                                <span class="nav-item">Services</span>
-                            </a>
-                        </li>
-                        <li><a href="templatedata.html">
-                                <i class="fas fa-chart-bar"></i>
-                                <span class="nav-item">Templates</span>
-                            </a>
-                        </li>
-                        <li><a href="customersdata.html">
-                                <i class="fas fa-user"></i>
-                                <span class="nav-item">Customers</span>
-                            </a>
-                        </li>
-                        <li><a href="paymentdata.html">
-                                <i class="fas fa-chart-bar"></i>
-                                <span class="nav-item">Payment_List</span>
-                            </a>
-                        </li>
-                        <li><a href="feedbackdata.html">
-                                <i class="fas fa-chart-bar"></i>
-                                <span class="nav-item">Feedback</span>
-                            </a>
-                        </li>
-                        <li><a href="enquirydata.html">
-                                <i class="fas fa-chart-bar"></i>
-                                <span class="nav-item">Enquiry</span>
-                            </a>
-                        </li>
-                        <li><a href="developers.html">
-                                <i class="fas fa-user"></i>
-                                <span class="nav-item">Developers</span>
-                            </a>
-                        </li>
-                        <li><a href="index.html" class="logout">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span class="nav-item">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <section class="main">
-                <div class="main-top">
-                    <h3>Admin Dashboard</h3>
-                </div>
-                <div class="main-body">
-                    <h1>Recently Added Customers</h1>
-
-                    <div class="search_bar">
-                        <input type="search" placeholder="Search Customer here...">
-                        <select name="customer" id="">
-                            <a href="">
-                                <option>Select service</option>
-                            </a>
-                            <a href="">
-                                <option>Web Design</option>
-                            </a>
-                            <a href="">
-                                <option>Web Development</option>
-                            </a>
-                            <a href="">
-                                <option>Testing</option>
-                            </a>
-                            <a href="">
-                                <option>SEO</option>
-                            </a>
-                            <a href="">
-                                <option>Digital Marketing</option>
-                            </a>
-                            <a href="">
-                                <option>App Development</option>
-                            </a>
-                        </select>
-                        <select class="filter">
-                            <option>Select ID</option>
-                            <option>Customer_id:1</option>
-                            <option>Customer_id:2</option>
-                            <option>Customer_id:3</option>
-                            <option>Customer_id:4</option>
-                            <option>Customer_id:5</option>
-                            <option>Customer_id:6</option>
-                            <option>Customer_id:7</option>
-                            <option>Customer_id:8</option>
-                            <option>Customer_id:9</option>
-                            <option>Customer_id:10</option>
-                        </select>
-                    </div>
-
-                    <div class="tags_bar">
-                        <div class="tag">
-                            <i class="fas fa-times"></i>
-                            <span>Rahul Dabhade</span>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="tag">
-                            <i class="fas fa-times"></i>
-                            <span>Yogita Kutal</span>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="tag">
-                            <i class="fas fa-times"></i>
-                            <span>Shivani Chikhale</span>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="tag">
-                            <i class="fas fa-times"></i>
-                            <span>Mayur Thorat</span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <p>There are more than <span>500+</span>Customers </p>
-                        <a href="admin_dashboard.html"><b>Add +&nbsp;&nbsp;&nbsp;&nbsp;/ Update &nbsp;&nbsp;&nbsp;&nbsp;/ Delete<b></b></a>
-                    </div>
-
-                    <div class="">
-                        <table>
-                            <tr>
-                                <th>Enquiry_Id</th>
-                                <th>Customer_Name</th>
-                                <th>Email</th>
-                                <th>Subject</th>
-                                <th>Message</th>
-
-                            </tr>
-                            <tr>
-                                <td>E_1</td>
-                                <td>Sonal Kale</td>
-                                <td>sonalkale@gmail.com</td>
-                                <td>Searching Services</td>
-                                <td>I want to create my own project website.</td>
-                            </tr>
-                            <tr>
-                                <td>E_2</td>
-                                <td>Yogita Kutal</td>
-                                <td>yogitakutal28@gmail.com</td>
-                                <td>Web Design Services</td>
-                                <td>I want only front-end designing.</td>
-                            </tr>
-                            <tr>
-                                <td>E_3</td>
-                                <td>Rahul Dabhade</td>
-                                <td>rahuldabhade@gmail.com</td>
-                                <td>Find out best Services</td>
-                                <td>I am researching the best services for my companies website.</td>
-                            </tr>
-                            <tr>
-                                <td>E_4</td>
-                                <td>Shivani Chikhale</td>
-                                <td>shivanichikhale@gmail.com</td>
-                                <td>Searching Types of Templates</td>
-                                <td>All templates are good.</td>
-                            </tr>
-                            <tr>
-                                <td>E_5</td>
-                                <td>Pramod Thete</td>
-                                <td>pthete08@gmail.com</td>
-                                <td>Finding templates</td>
-                                <td>I wan to create my own project website.</td>
-                            </tr>
-                            <tr>
-                                <td>E_6</td>
-                                <td>Sakshi Kanade</td>
-                                <td>sakshikanade@gmail.com</td>
-                                <td>Find out All Services</td>
-                                <td>I wan to create my own project website.</td>
-                            </tr>
-                            <tr>
-                                <td>E_7</td>
-                                <td>Priyanka Gosavi</td>
-                                <td>priyankagosavi@gmail.com</td>
-                                <td>Searching Services</td>
-                                <td>I am search that template which is the best.</td>
-                            </tr>
-                            <tr>
-                                <td>E_8</td>
-                                <td>Suyash Walunj</td>
-                                <td>suyashwalunj@gmail.com</td>
-                                <td>Searching templates</td>
-                                <td>We create own website for shop.</td>
-                            </tr>
-                            <tr>
-                                <td>E_9</td>
-                                <td>sagar shitode</td>
-                                <td>sagarshitode@gmail.com</td>
-                                <td>Templates are needed for project.</td>
-                                <td>We developed our Apps.</td>
-                            </tr>
-                            <tr>
-                                <td>E_10</td>
-                                <td>Diksha Khokrale</td>
-                                <td>dkhokrale@gmail.com</td>
-                                <td>Searching web Services</td>
-                                <td>I wan to create my own website.</td>
-                            </tr>
-                           
-                        </table>
-                    </div>
-
-            </section>
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="" alt="Online Courses">
+                <h1>Online Courses</h1>
+            </div>
+            <ul>
+                <li><a href="Manage_Courses">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-item">Manage_Courses</span>
+                    </a>
+                </li>
+                <li><a href="Manage_User">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Manage_User</span>
+                    </a>
+                </li>
+                <li><a href="Manage_Feedback">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Manage_Feedback</span>
+                    </a>
+                </li>
+                <li><a href="Manage_Enquiry_details">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Manage_Enquiry_details</span>
+                    </a>
+                </li>
+                <li><a href="Manage_Enquiry_details">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Manage_Payment_details</span>
+                    </a>
+                </li>
+                <li><a href="Manage_Enquiry_details">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="nav-item">Reports</span>
+                    </a>
+                </li>
+                <li><a href="index" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Logout</span>
+                    </a>
+                </li>
+            </ul>
         </div>
+    </nav>
+    <section class="main">
+      <div class="main-top">
+        <div class="title-and-profile">
+            <h3>Admin Dashboard</h3>
+            <div class="Admin_profile_circle">
+                <a href="admin_profile.html">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    </body>
+        <div class="main-body">
+            <h1>Additional Contents...</h1>
+            <div class="search_bar">
+                <input type="search" placeholder="Search additional content here...">
+                <select name="" id="">
+                    <option>Content</option>
+                    <a href="Manage_Courses"><option>Manage_Courses</option></a>
+                    <a href="Manage_Users"><option>Manage_Users</option></a>
+                    <a href="Manage_Feedback"><option>Manage_Feedback</option></a>
+                    <a href="Manage_Enquiry_details"><option>Manage_Enquiry_details</option></a>
+                    <a href="Manage_Payment_details"><option>Manage_Payment_details</option></a>
+                    <a href="reports.html"><option>Reports</option></a>
+                    <a href="index"><option>Logout</option></a>
+                </select>
+                <select class="filter">
+                    <option>Filter</option>
+                    <option>user_1</option>
+                    <option>user_2</option>
+                    <option>user_3</option>
+                    <option>user_4</option>
+                    <option>user_5</option>
+                    <option>user_6</option>
+                    <option>user_7</option>
+                </select>
+            </div>
+            <div class="row">
+              <a href="Add_courses"><b>Add +&nbsp;&nbsp;&nbsp;&nbsp;/ Update &nbsp;&nbsp;&nbsp;&nbsp;/ Delete<b></b></a>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in Data %}
+                <tr>
+                  <td>{{ i.id }}</td>
+                  <td>{{ i.Enquiry_name }}</td>
+                  <td>{{ i.Email }}</td>
+                  <td>{{ i.Subject  }}</td>
+                  <td>{{ i.Message}}</td>
+    
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</body>
+</html>
 
-    </html>
-</span>
+
+
+
+
+

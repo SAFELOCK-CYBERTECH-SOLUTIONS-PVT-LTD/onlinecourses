@@ -11,4 +11,8 @@ class add_courses(models.Model):
     Mode=models.CharField(max_length=10)
 
     
-
+class add_enquiry(models.Model):
+    e_name=models.CharField(max_length=50)
+    e_email=models.CharField(max_length=50)
+    e_subject=models.CharField(max_length=100)
+    e_message=models.CharField(max_length=50)
