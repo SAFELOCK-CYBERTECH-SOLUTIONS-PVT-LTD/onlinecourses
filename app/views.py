@@ -10,6 +10,11 @@ def index(request):
 def admin_dashboard(request):
     return render(request,'admin_dashboard.html')
 
+def Manage_User(request):
+    return render(request,'Manage_Users.html')
+
+def add_users(request):
+    return render(request,'add_users.html')
 
 
 def Manage_Feedback(request):
