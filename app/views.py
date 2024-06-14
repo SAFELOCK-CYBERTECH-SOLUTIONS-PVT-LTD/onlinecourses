@@ -97,3 +97,6 @@ def Solutions(request):
 
 def It_Topics(request):
     return render(request,'It_topics.html')
+
+def logout(request):
+    return render(request,'login.html')
