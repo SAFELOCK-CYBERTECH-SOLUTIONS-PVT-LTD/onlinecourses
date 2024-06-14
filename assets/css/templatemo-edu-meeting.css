@@ -701,7 +701,7 @@ banner
 #bg-video::-webkit-media-controls {
     display: none !important;
 }
-
+/* 
 .video-overlay {
     position: absolute;
     background-color: rgba(116, 119, 121, 0.75);
@@ -709,9 +709,9 @@ banner
     left: 0;
     bottom: 0;
     right: 0;
-    height: 100%;
+    height: 80%;
     width: 100%;
-}
+} */
 
 .main-banner .caption {
   position: absolute;
