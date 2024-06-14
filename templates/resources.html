@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Online Courses</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        h1, p {
+            color: #333;
+        }
+
+        .resource-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .resource-card img {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .resource-card .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .resource-card .card-title {
+            font-size: 1.25em;
+            margin-bottom: 15px;
+            color: #007BFF;
+        }
+
+        .resource-card .card-text {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .btn-primary {
+            background-color:#0056b3 ;
+            border-color: #007BFF;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color:#1C1447; ;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Learning Resources</h1>
+        <p class="text-center mb-5">Explore our collection of articles, tutorials, and downloadable materials to enhance your learning experience.</p>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="article1.jpg" class="card-img-top" alt="Article 1">
+                    <div class="card-body">
+                        <h5 class="card-title">AI & Machine Learning Guide</h5>
+                        <p class="card-text">Discover the basics and advanced concepts of AI and Machine Learning in this comprehensive guide.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="tutorial1.jpg" class="card-img-top" alt="Tutorial 1">
+                    <div class="card-body">
+                        <h5 class="card-title">DevOps Best Practices</h5>
+                        <p class="card-text">Learn the best practices for DevOps implementation with our step-by-step tutorial.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="download1.jpg" class="card-img-top" alt="Download 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Computing eBook</h5>
+                        <p class="card-text">Download our free eBook to get in-depth knowledge about cloud computing technologies.</p>
+                        <a href="#" class="btn btn-primary">Download Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="article2.jpg" class="card-img-top" alt="Article 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Cybersecurity Fundamentals</h5>
+                        <p class="card-text">Get introduced to the fundamental principles of cybersecurity and how to protect your data.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="tutorial2.jpg" class="card-img-top" alt="Tutorial 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Programming for Beginners</h5>
+                        <p class="card-text">Start your programming journey with our beginner-friendly tutorials and examples.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="download2.jpg" class="card-img-top" alt="Download 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science Toolkit</h5>
+                        <p class="card-text">Download our toolkit to get started with data science projects and applications.</p>
+                        <a href="#" class="btn btn-primary">Download Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
