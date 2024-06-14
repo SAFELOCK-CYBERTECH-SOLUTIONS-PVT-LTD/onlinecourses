@@ -38,7 +38,11 @@ urlpatterns = [
      path('Resources', views.Resources, name='Resources'),
      path('Get_Quotes', views.Get_Quotes, name='Get_Quotes'),
      path('Solutions', views.Solutions, name='Solutions'),
-     path('It_Topics', views.It_Topics, name='It_Topics')
+     path('It_Topics', views.It_Topics, name='It_Topics'),
+     path("Login", views.Login, name='Login'),
+     path('Certification', views.Certification, name='Certification'),
+     path('Course_details', views.Course_details, name='Course_details'),
+     path('Benefits_saving', views.Benefits_saving, name='Benefits_saving')
      
 
 
