@@ -33,7 +33,8 @@ urlpatterns = [
      path('add_feedback',views.add_feedback, name='add_feedback'),
      path('Add_courses', views.Add_courses, name='Add_courses'),
      path('addCourse', views.addCourse, name='addCourse'),
-     path('Register_page', views.Register_page, name='Register_page')
+     path('Register_page', views.Register_page, name='Register_page'),
+     path('Customer_profile', views.Customer_profile, name='Customer_profile')
      
 
 

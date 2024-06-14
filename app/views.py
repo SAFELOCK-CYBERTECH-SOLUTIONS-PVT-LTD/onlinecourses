@@ -82,3 +82,6 @@ def Manage_Courses(request):
 
 def Register_page(request):
     return render(request,"Register_page.html")
+
+def Customer_profile(request):
+    return render(request,'Customer_profile.html') 

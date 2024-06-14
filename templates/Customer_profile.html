@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .profile-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .profile-container h2 {
+            margin: 10px 0;
+        }
+        .profile-container p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .profile-container .profile-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .profile-container .profile-info label {
+            font-weight: bold;
+        }
+        .profile-container .profile-info div {
+            margin-bottom: 10px;
+        }
+        .profile-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .profile-container button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <img src="https://via.placeholder.com/100" alt="Profile Picture">
+    <h2>Rahul Dabhade</h2>
+    <p>rahuldabhade@gmail.com</p>
+
+    <div class="profile-info">
+        <div>
+            <label for="phone">Phone:</label>
+            <p id="phone">+91 9158649410</p>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <p id="address">Mohan nagar,Pimpri-Chinchwad, pune</p>
+        </div>
+        <div>
+            <label for="membership">Membership:</label>
+            <p id="membership">Gold Member</p>
+        </div>
+        <div>
+            <label for="membership">Username:</label>
+            <p id="membership">Rahul</p>
+        </div>
+        <div>
+            <label for="membership">Password:</label>
+            <p id="membership">Rahul@123</p>
+        </div>
+    </div>
+    
+    <button class="back-button" onclick="goBack()">Back</button>
+</div>
+<script>
+    function goBack() {
+        window.location.href = 'customer.html'; // Change this to the path of your target page
+    }
+</script>
+
+</body>
+</html>
