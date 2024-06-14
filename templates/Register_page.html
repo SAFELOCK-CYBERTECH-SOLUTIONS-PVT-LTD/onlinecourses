@@ -64,6 +64,7 @@
         <section class="form-container">
             <h2>Register Here</h2>
             <form action="#" method="post">
+                {% csrf_token %}
                 <div class="mb-3">
                     <label for="first_name" class="form-label">First Name:</label>
                     <input type="text" id="first_name" name="first_name" class="form-control" required>
