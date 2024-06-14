@@ -106,3 +106,6 @@ def Certification(request):
 
 def Course_details(request):
     return render(request,'Course_details.html')
+
+def Benefits_saving(request):
+    return render(request,"benefits_saving.html")
