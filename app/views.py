@@ -85,3 +85,15 @@ def Register_page(request):
 
 def Customer_profile(request):
     return render(request,'Customer_profile.html') 
+
+def Resources(request):
+    return render(request,'resources.html') 
+
+def Get_Quotes(request):
+    return render(request,'getQuotes.html')
+
+def Solutions(request):
+    return render(request,'solutions.html')
+
+def It_Topics(request):
+    return render(request,'It_topics.html')

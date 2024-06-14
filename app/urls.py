@@ -34,7 +34,11 @@ urlpatterns = [
      path('Add_courses', views.Add_courses, name='Add_courses'),
      path('addCourse', views.addCourse, name='addCourse'),
      path('Register_page', views.Register_page, name='Register_page'),
-     path('Customer_profile', views.Customer_profile, name='Customer_profile')
+     path('Customer_profile', views.Customer_profile, name='Customer_profile'),
+     path('Resources', views.Resources, name='Resources'),
+     path('Get_Quotes', views.Get_Quotes, name='Get_Quotes'),
+     path('Solutions', views.Solutions, name='Solutions'),
+     path('It_Topics', views.It_Topics, name='It_Topics')
      
 
 
