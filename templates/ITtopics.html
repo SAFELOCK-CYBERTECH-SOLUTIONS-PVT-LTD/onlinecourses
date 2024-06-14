@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Courses</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa; /* Light gray background */
+    }
+
+    .jumbotron {
+      background: linear-gradient(to right, #1c1447, #1c1447); /* Gradient background using #1c1447 */
+      color: white; /* White text color */
+      animation: slideIn 1s ease-in-out;
+      margin-bottom: 30px; /* Space below jumbotron */
+      border-radius: 10px; /* Rounded corners for jumbotron */
+      padding: 30px; /* Padding inside jumbotron */
+    }
+
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add shadow for cards */
+      border: none; /* Remove card border */
+      border-radius: 10px; /* Rounded corners for cards */
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-img-top {
+      border-top-left-radius: 10px; /* Rounded corners for card image top left */
+      border-top-right-radius: 10px; /* Rounded corners for card image top right */
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .btn-primary {
+      background-color: #1c1447; /* Dark purple background for primary button */
+      border-color: #1c1447; /* Dark purple border color */
+    }
+
+    .btn-primary:hover {
+      background-color: #130f34; /* Darker shade on hover */
+      border-color: #130f34; /* Darker border on hover */
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="jumbotron text-center">
+      <h1 class="display-4">IT Courses</h1>
+      <p class="lead">Learn the latest in IT and tech.</p>
+    </div>
+
+    <div class="row" id="courses">
+      <!-- Course cards will be inserted here by JavaScript -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const courses = [
+        {
+          title: "Web Development",
+          description: "Learn HTML, CSS, JavaScript and more to build modern websites.",
+          image: "https://via.placeholder.com/150"
+        },
+        {
+          title: "Data Science",
+          description: "Analyze data to gain valuable insights using Python, R, and SQL.",
+          image: "https://via.placeholder.com/150"
+        },
+        {
+          title: "Cyber Security",
+          description: "Protect systems and networks from digital attacks.",
+          image: "https://via.placeholder.com/150"
+        }
+      ];
+
+      const courseContainer = document.getElementById('courses');
+
+      courses.forEach(course => {
+        const courseCard = `
+          <div class="col-md-4">
+            <div class="card">
+              <img src="${course.image}" class="card-img-top" alt="${course.title}">
+              <div class="card-body">
+                <h5 class="card-title">${course.title}</h5>
+                <p class="card-text">${course.description}</p>
+                <a href="#" class="btn btn-primary btn-block">Learn More</a>
+              </div>
+            </div>
+          </div>
+        `;
+        courseContainer.innerHTML += courseCard;
+      });
+    });
+  </script>
+
+</body>
+</html>

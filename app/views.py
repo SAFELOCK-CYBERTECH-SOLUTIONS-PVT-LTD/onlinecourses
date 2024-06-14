@@ -96,7 +96,13 @@ def Solutions(request):
     return render(request,'solutions.html')
 
 def It_Topics(request):
-    return render(request,'It_topics.html')
+    return render(request,'ITtopics.html')
 
-def logout(request):
-    return render(request,'login.html')
+def Login(request):
+    return render(request,'Login.html')
+
+def Certification(request):
+    return render(request,'ITC.html')
+
+def Course_details(request):
+    return render(request,'Course_details.html')

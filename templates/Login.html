@@ -1,108 +1,89 @@
-<html>
-    <head>
-        <title>Login</title>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
     <style>
-        .button{box-sizing: border-box;}
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-  background-color: #555;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  left:20px;
-  margin-top:10px;
-  /* bottom: 23px;
-  right: 28px;
-  width: 280px; */
-}
-
-/* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position:absolute;
-  bottom: 0;
-  right: 500px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
-}
-
-/* Add styles to the form container */
-.form-container {
-  max-width: 500px;
-  padding: 10px;
-  margin-bottom: 100px;
-  background-color: white;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
-}
-
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            height: 50%;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1C1447;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #218838;
+        }
     </style>
-    </head>
-    <script>
-        function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+</head>
+<body>
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-    </script>
-    <body>
-<!-- A button to open the popup form -->
-<button class="open-button" onclick="openForm()">Sign in</button>
-
-<!-- The form -->
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Login</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
+<div class="login-container">
+    <h2>Login</h2>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Enter your username">
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password">
+    
+    <button onclick="login()">Login</button><br><br>
+    <div><span>Create an Account <a href="register.html">Register or Sign Up</a></span></div>
+  </div>
 </div>
-    </body>
+ 
+<script>
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        if (username === 'snehal' && password === 'admin') {
+            alert('Welcome to Admin_dashboard!');
+            // Redirect to admin dashboard
+            window.location.href = 'admin_dashboard.html';
+        } else if (username === 'Rahul' && password === 'Rahul@123') {
+            alert('Welcome to Customer_dashboard!');
+            // Redirect to customer dashboard
+            window.location.href = 'customer.html';
+        } else {
+            alert('Invalid username or password');
+        }
+    }
+</script>
+
+</body>
 </html>

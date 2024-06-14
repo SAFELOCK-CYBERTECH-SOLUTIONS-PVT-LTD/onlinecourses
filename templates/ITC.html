@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booming IT Certifications</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .jumbotron {
+      background: linear-gradient(to right, #1c1447, #1c1447);
+      color: white;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      border: 1px solid #1c1447; /* New border color */
+      box-shadow: 0px 0px 10px rgba(28, 20, 71, 0.1); /* New box shadow */
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px rgba(28, 20, 71, 0.2); /* New hover shadow */
+    }
+
+    .btn-primary {
+      background-color: #1c1447; /* New button background color */
+      border-color: #1c1447; /* New button border color */
+    }
+
+    .btn-primary:hover {
+      background-color: #0f0a2c; /* Darker background color on hover */
+      border-color: #0f0a2c; /* Darker border color on hover */
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="jumbotron text-center">
+      <h1 class="display-4">Booming IT Certifications</h1>
+      <p class="lead">Explore certifications that are highly valued in the IT industry.</p>
+    </div>
+
+    <div class="row" id="certifications">
+      <!-- Certification cards will be inserted here by JavaScript -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const certifications = [
+        {
+          title: "AWS Certified Solutions Architect",
+          description: "Design and deploy scalable, highly available, and fault-tolerant systems on AWS.",
+          image: "https://via.placeholder.com/150"
+        },
+        {
+          title: "Certified Information Systems Security Professional (CISSP)",
+          description: "Prove your expertise in cybersecurity and secure organizational assets.",
+          image: "https://via.placeholder.com/150"
+        },
+        {
+          title: "Google Certified Professional Cloud Architect",
+          description: "Design and manage scalable and secure Google Cloud architecture.",
+          image: "https://via.placeholder.com/150"
+        }
+      ];
+
+      const certificationContainer = document.getElementById('certifications');
+
+      certifications.forEach(certification => {
+        const certificationCard = `
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="${certification.image}" class="card-img-top" alt="${certification.title}">
+              <div class="card-body">
+                <h5 class="card-title">${certification.title}</h5>
+                <p class="card-text">${certification.description}</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        `;
+        certificationContainer.innerHTML += certificationCard;
+      });
+    });
+  </script>
+
+</body>
+</html>
